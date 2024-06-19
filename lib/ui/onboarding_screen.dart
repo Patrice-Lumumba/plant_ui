@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_ui/ui/login_page.dart';
 import '../constants.dart';
+import './root_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -25,7 +26,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.only(right: 20, top: 20),
             child: InkWell(
               onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const Login()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => const RootPage()));
               }, //Pour le login
               child: const Text(
                 'Skip',
@@ -88,7 +90,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             curve: Curves.easeIn);
                       }
                     } else {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const Login()));
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) => const RootPage()));
                     }
                   });
                 },
@@ -96,12 +99,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Icons.arrow_forward_ios,
                   size: 24,
                   color: Colors.white,
-                ),),
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Constants.primaryColor,
                 ),
+              ),
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Constants.primaryColor,
+              ),
             ),
           ),
         ],
