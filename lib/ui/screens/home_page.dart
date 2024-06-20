@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       'Garden',
       'Supplement',
     ];
-    bool toggleIsFavorite(bool isFavorite){
+    bool toggleIsFavorated(bool isFavorite){
       return !isFavorite;
     }
 
@@ -141,11 +141,11 @@ class _HomePageState extends State<HomePage> {
                               width: 50,
                               child: IconButton(
                                 onPressed: () {
-                                  // setState(() {
-                                  //   bool isFavorited = toggleIsFavorated(
-                                  //       _plantList[index].isFavorated);
-                                  //   _plantList[index].isFavorated = isFavorited;
-                                  // });
+                                  setState(() {
+                                    bool isFavorited = toggleIsFavorated(
+                                        _plantList[index].isFavorated);
+                                    _plantList[index].isFavorated = isFavorited;
+                                  });
                                 },
                                 icon: Icon(
                                   _plantList[index].isFavorated == true
